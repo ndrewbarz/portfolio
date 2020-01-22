@@ -223,3 +223,28 @@ function bgMove(){
   })
 }
 bgMove(); */
+
+
+// Submit forms via AJAX
+const processForm = form => {
+  const data = new FormData(form)
+  data.append('form-name', 'contact');
+  fetch('/', {
+    method: 'POST',
+    body: data,
+  })
+  .then(() => {
+    alert('Thank you:)')
+  })
+  .catch(error => {
+    alert('Something went wrong:(')
+  })
+}
+
+const contactForm = document.querySelector('.contact-form')
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    processForm(contactForm);
+  })
+}
