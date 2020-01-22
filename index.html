@@ -169,7 +169,13 @@
 					<h1 class="title">Contact me</h1>
 					<div class="contact-box" id="contact-box">
 						<div class="form-container sign-up-container">
-							<form name="contact" method="POST" data-netlify="true">
+							<form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+								<div hidden aria-hidden="true">
+									<label>
+										Don’t fill this out if you're human: 
+										<input name="bot-field" />
+									</label>
+								</div>
 								<h1>Get in touch</h1>
 								<div class="social-container">
 									<a href="tel:+380996141367" class="social" target="_blank" title="Phone-number"><img src="assets/img/icon-phone.png" alt="Phone-number"></a>
