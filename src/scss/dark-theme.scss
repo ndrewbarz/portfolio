@@ -1,0 +1,129 @@
+// dark mode
+.dark {
+	background: $primary-color;
+  color: #e6e9f0;
+
+  .show-menu {
+    background: $primary-color;
+  }
+  
+	.nav {
+    background: $primary-color;
+		.nav-box a {color: #e6e9f0;}
+		.logo {
+			color: #e6e9f0;
+			&:hover {color: $highlight-color;}
+		}
+  }
+
+  .nav .menu-btn:after, .nav .menu-btn:before {
+      background: $secondary-color;
+    }
+    .nav .menu-btn:before {
+      box-shadow: $secondary-color 0 14px 0 0;
+    }
+    nav .menu-btn.active-menu-btn {
+      &::before {
+        box-shadow: transparent 0 0 0 0;
+    }
+  }
+
+  section:not(.footer) {
+    border-bottom: 1px solid rgba(58,169,252,.04);
+  }
+
+  
+  .about-box {
+    box-shadow: 0 14px 26px rgba($light-red-color, 0.04);
+  }
+
+  /*
+	.skills {
+		color: #e6e9f0;
+		.tab {
+			color: #e6e9f0;
+		}
+  }
+  */
+  .skills .skill {
+		box-shadow: 0 1px 1px rgba($light-green-color,0.04);
+    &:hover {
+			box-shadow: 0 1px 5px rgba($light-green-color,0.5);
+    }
+  }
+  .skill.active-skill {
+    box-shadow: 0 1px 5px rgba($light-green-color,0.5);
+  }
+
+  .project {
+    background: $primary-color !important;
+    box-shadow: 0 14px 26px rgba($light-purple-color, 0.04) !important;
+    &:hover {
+      box-shadow: 0 14px 26px rgba($light-purple-color, 0.11) !important;
+
+    }
+  }
+  
+  .contact-box {color: #232323;}
+  #container {
+    box-shadow: 0 14px 26px rgba(58, 169, 252, 0.04);
+
+  }
+
+  .footer {
+    // box-shadow: 0 14px 26px rgba(58, 169, 252, 0.11);
+    border: 1px solid rgba(58, 169, 252, 0.04);
+  }
+
+  .scroll {background: #1D2228;}
+}
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 55px;
+  height: 30px;
+  background: $primary-color;
+  // margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: '';
+  background: $secondary-color;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+ transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+}
+
+input:checked + label {
+  background: $light-orange-color;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+// -------------
