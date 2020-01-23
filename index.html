@@ -172,7 +172,7 @@
 							<form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 								<div hidden aria-hidden="true">
 									<label>
-										Don’t fill this out if you're human: 
+										Don’t fill this out if you're  human: 
 										<input name="bot-field" />
 									</label>
 								</div>
@@ -184,10 +184,10 @@
 									<a href="https://www.linkedin.com/in/andrew-barzykin" class="social" target="_blank" title="Linkedin"><img src="assets/img/icon-linkedin.png" alt="Linkedin"></a>
 								</div>
 								<span>Use this form to send me a message</span>
-								<input type="text" name="name" placeholder="Name/Company" />
-								<input type="email" name="email" placeholder="Email" />
-								<textarea name="message" id="message" cols="30" rows="6" placeholder="Message"></textarea>
-								<button type="submit">Send message</button>
+								<input required class="contact-name" type="text" name="name" placeholder="Name/Company" />
+								<input required class="contact-email" type="email" name="email" placeholder="Email" />
+								<textarea required class="contact-message" name="message" id="message" cols="30" rows="6" placeholder="Message" minlength="5"></textarea>
+								<button class="submit-btn" type="submit">Send message</button>
 							</form>
 						</div>
 						<div class="form-container sign-in-container">
@@ -223,24 +223,30 @@
 		</div>
 		<!-- Footer -->
 		<section id="footer" class="footer">
-			<div class="footer-links">
-				<nav class="footer-nav">
+			<div class="footer-box">
+				<div class="footer-links">
+					<nav class="footer-nav">
 						<ul>
-								<li><a href="#about">About</a></li>
-								<li><a href="#skills">Skills</a></li>
-								<li><a href="#projects">Projects</a></li>
-								<li><a href="#contact">Contact</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#contact">Contact</a></li>
 						</ul>
-				</nav>
-			</div>
-			<div class="copyright">
-				<p>&copy; ndrewbarz. <span class="date"></span></p>
-			</div>
-			<div class="social-container">
-				<a href="tel:+380996141367" class="social" target="_blank" title="Phone-number"><img src="assets/img/icon-phone.png" alt="Phone-number"></a>
-				<a href="https://github.com/ndrewbarz?tab=repositories" class="social" target="_blank" title="GitHub profile"><img src="assets/img/icon-octocat.png" alt="GitHub profile"></a>
-				<a href="tg://resolve?domain=ndrewbarz" class="social" target="_blank" title="Telegram"><img src="assets/img/icon-telegram.png" alt="Telegram"></a>
-				<a href="https://www.linkedin.com/in/andrew-barzykin" class="social" target="_blank" title="Linkedin"><img src="assets/img/icon-linkedin.png" alt="Linkedin"></a>
+					</nav>
+				</div>
+				<div class="copyright">
+					<p>&copy; ndrewbarz. <span class="date"></span></p>
+				</div>
+				<div class="social-container">
+					<a href="tel:+380996141367" class="social" target="_blank" title="Phone-number"><img
+							src="assets/img/icon-phone.png" alt="Phone-number"></a>
+					<a href="https://github.com/ndrewbarz?tab=repositories" class="social" target="_blank" title="GitHub profile"><img
+							src="assets/img/icon-octocat.png" alt="GitHub profile"></a>
+					<a href="tg://resolve?domain=ndrewbarz" class="social" target="_blank" title="Telegram"><img
+							src="assets/img/icon-telegram.png" alt="Telegram"></a>
+					<a href="https://www.linkedin.com/in/andrew-barzykin" class="social" target="_blank" title="Linkedin"><img
+							src="assets/img/icon-linkedin.png" alt="Linkedin"></a>
+				</div>
 			</div>
 		</section>
 
