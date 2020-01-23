@@ -5,6 +5,7 @@ import { ProjectFactory } from '../components/Projects';
 import { TextScramble } from '../components/TextPhrases';
 import { Jokes } from '../components/ChuckJokes';
 import { UI } from '../components/ChuckUi';
+import Swal from 'sweetalert2';
 
 // import '../css/style.css';
 import '../scss/style.scss';
@@ -203,29 +204,8 @@ function toggleAccordion(e){
 skillItem.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
-// BG-TEXT MOVE
-/* const sections = document.querySelectorAll('section'),
-    layers = document.querySelectorAll('.bg-text-box');
-function bgMove(){
-
-  sections.forEach((section) => {
-    section.addEventListener('mousemove', (e) => {
-      let pageX = e.clientX,
-          pageY = e.clientY;
-          
-  
-      layers.forEach((layer) => {
-        layer.style.transform = 'translateX('+ pageX/100 +'%) translateY('+ pageY/100 +'%)';
-        layer.style.top = pageX/100 +'rem';
-        // layer.style.left = -pageY/100 +'rem';
-      })
-    });
-  })
-}
-bgMove(); */
-
-
 // Submit forms via AJAX
+
 const processForm = form => {
   const data = new FormData(form)
   data.append('form-name', 'contact');
@@ -234,17 +214,54 @@ const processForm = form => {
     body: data,
   })
   .then(() => {
-    alert('Thank you:)')
+    let name = data.getAll('name').join('')
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: `Thank You, ${name}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
   })
   .catch(error => {
-    alert('Something went wrong:(')
+    console.log(error)
+    Swal.fire({
+      position: "top",
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+      showConfirmButton: false,
+      timer: 1500
+    });
   })
 }
 
+// form validation
 const contactForm = document.querySelector('.contact-form')
-if (contactForm) {
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    processForm(contactForm);
-  })
+const [, name, email] = contactForm.elements;
+
+contactForm.addEventListener('submit', e => {
+  e.preventDefault();
+    if (validateName(name.value) && validateEmail(email.value)) {
+      processForm(contactForm);
+    } else {
+      return false
+
+    }
+})
+
+
+function validateName(value) {
+  const name = document.querySelector('.contact-name')
+  const re = /^[a-zA-Zа-яА-Я]{3,15}$/;
+  !re.test(value) ? name.classList.add('input-err') : name.classList.remove('input-err')
+
+  return re.test(value)
+}
+function validateEmail(value) {
+  const email = document.querySelector('.contact-email')
+  const re = /^[0-9a-zA-Z-\_\.]+\@[0-9a-z-A-Z-\.]{2,}\.([a-zA-Z]{2,5})$/;
+  !re.test(value) ? email.classList.add('input-err') : email.classList.remove('input-err')
+
+  return re.test(value)
 }
