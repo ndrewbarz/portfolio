@@ -1,8 +1,6 @@
-// const emailForm = document.querySelector('.contact-form')
-
 function validateName(value) {
   const name = document.querySelector('.contact-name')
-  const re = /^[a-zA-Zа-яА-Я]{3,15}$/;
+  const re = /^[a-zA-Zа-яА-Я\s]{3,}$/;
   !re.test(value) ? name.classList.add('input-err') : name.classList.remove('input-err')
 
   return re.test(value)
