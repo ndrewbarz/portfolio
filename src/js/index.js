@@ -7,6 +7,8 @@ import { Jokes } from '../components/ChuckJokes';
 import { UI } from '../components/ChuckUi';
 import Swal from 'sweetalert2';
 
+import {validateName, validateEmail} from '../components/isValid'
+
 // import '../css/style.css';
 import '../scss/style.scss';
 
@@ -205,63 +207,47 @@ skillItem.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
 // Submit forms via AJAX
+const form = document.querySelector(".contact-form");
+const nameInput = document.querySelector(".contact-name");
+const emailInput = document.querySelector(".contact-email");
+const [, ...elms] = form.elements;
+if (form) {
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (validateName(nameInput.value) && validateEmail(emailInput.value)) {
+      processForm(form);
+    }
+  });
+}
 
 const processForm = form => {
-  const data = new FormData(form)
-  data.append('form-name', 'contact');
-  fetch('/', {
-    method: 'POST',
-    body: data,
+  const data = new FormData(form);
+  data.append("form-name", "contact");
+  fetch("/", {
+    method: "POST",
+    body: data
   })
-  .then(() => {
-    let name = data.getAll('name').join('')
-    Swal.fire({
-      position: 'top',
-      icon: 'success',
-      title: `Thank You, ${name}`,
-      showConfirmButton: false,
-      timer: 1500
+    .then(() => {
+      let name = data.getAll("name").join("");
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: `Thank You, ${name}`,
+        showConfirmButton: false,
+        timer: 1500
+      });
+      elms.forEach(el => {
+        el.value = "";
+      });
     })
-  })
-  .catch(error => {
-    console.log(error)
-    Swal.fire({
-      position: "top",
-      icon: "error",
-      title: "Oops...",
-      text: "Something went wrong!",
-      showConfirmButton: false,
-      timer: 1500
+    .catch(error => {
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        showConfirmButton: false,
+        timer: 1500
+      });
     });
-  })
-}
-
-// form validation
-const contactForm = document.querySelector('.contact-form')
-const [, name, email] = contactForm.elements;
-
-contactForm.addEventListener('submit', e => {
-  e.preventDefault();
-    if (validateName(name.value) && validateEmail(email.value)) {
-      processForm(contactForm);
-    } else {
-      return false
-
-    }
-})
-
-
-function validateName(value) {
-  const name = document.querySelector('.contact-name')
-  const re = /^[a-zA-Zа-яА-Я]{3,15}$/;
-  !re.test(value) ? name.classList.add('input-err') : name.classList.remove('input-err')
-
-  return re.test(value)
-}
-function validateEmail(value) {
-  const email = document.querySelector('.contact-email')
-  const re = /^[0-9a-zA-Z-\_\.]+\@[0-9a-z-A-Z-\.]{2,}\.([a-zA-Z]{2,5})$/;
-  !re.test(value) ? email.classList.add('input-err') : email.classList.remove('input-err')
-
-  return re.test(value)
-}
+};
