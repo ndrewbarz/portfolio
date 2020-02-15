@@ -5,13 +5,14 @@ const ctx = document.getElementById('myChart').getContext('2d');
 let myDoughnutChart = new Chart(ctx, {
 	type: 'doughnut',
 	data: {
-		labels: ['HTML5', 'CSS3', 'JavaScript', 'Git', 'Webpack'],
+		labels: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Git', 'SCSS'],
 		datasets: [{
 			label: 'Progress',
 			data: [
 				90,
 				80,
 				60,
+				30,
 				40,
 				40
 			],
@@ -19,17 +20,17 @@ let myDoughnutChart = new Chart(ctx, {
 				'#FF8855',
 				'#65BEE4',
 				'#F9DC6A',
-				'rgba(75, 192, 192, 0.2)',
-				'rgba(153, 102, 255, 0.2)',
-				'rgba(255, 159, 64, 0.2)'
+				'rgba(97, 219, 251, 0.7)',
+				'rgba(241, 80, 47, 0.7)',
+				'rgba(204, 102, 153, 0.7)'
 			],
 			borderColor: [
 				'#DD5317',
 				'#2194C5',
 				'#E9BC0A',
-				'rgba(75, 192, 192, 1)',
-				'rgba(153, 102, 255, 1)',
-				'rgba(255, 159, 64, 1)'
+				'rgb(63, 190, 221)',
+				'rgb(241, 80, 47)',
+				'rgb(204, 102, 153)'
 			],
 			borderWidth: 1
 		}]

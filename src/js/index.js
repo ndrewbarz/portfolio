@@ -1,6 +1,6 @@
 import { HeaderComponent } from '../components/Header';
 import { MainContainerComponent } from '../components/MainContainer';
-// import { Chart } from '../components/Chart.js';
+import { Chart } from '../components/Chart.js';
 import { ProjectFactory } from '../components/Projects';
 import { TextScramble } from '../components/TextPhrases';
 import { Jokes } from '../components/ChuckJokes';
@@ -24,10 +24,10 @@ const main = new MainContainerComponent('main');
 // Projects Factory
 const projFactory = new ProjectFactory();
 const projects = [
-	projFactory.create('Chuck Norris', 'Простое приложение которое использует стороннее API для отображения шуток Чака Норриса, взаимодействует с API по средством асинхронных функций и fetch API', 'http://google.com', 'http://youtube.com', 'js', 'html'),
-	projFactory.create('Chuck Norris', 'API CHUCK ipsum dolor sit amet consectetur adipisicing elit. Quipsum dolor sit amet consectetur adipisicing elit. ae, et.', 'http://google.com', 'http://youtube.com', 'js', 'html'),
-	projFactory.create('Chuck Norris', 'API CHUCK ipsum dolor sit amet consectetur adipisicing elit. Quipsum dolor sit amet consectetur adipisicing elit. ae, et.', 'http://google.com', 'http://youtube.com', 'js', 'html'),
-	projFactory.create('GitHub Finder', 'GitHub ipsum dolor sit amet consectetur adipisicing elit. Quae, et.', 'http://vk.com', 'http://facebook.com', 'js', 'html', 'css')
+	projFactory.create('GitHub Search App', 'Search GitHub users by username, display profile info. Using async/await and Fetch API to get the user from GitHub API', 'https://github.com/ndrewbarz/searchapp', 'https://ndrewbarz.github.io/searchapp/', 'bootstrap', 'js', 'fetch', 'async/await', 'api'),
+	projFactory.create('Chuck Norris', 'A simple app that uses a third-party API to display Chuck Norris jokes, interacts with the API using asynchronous functions and a Fetch API', 'https://github.com/ndrewbarz/chuck-norris-joke', 'https://ndrewbarz.github.io/chuck-norris-joke/', 'js', 'fetch', 'api'),
+	projFactory.create('Weather App', 'Show current weather, you can change the location. Created by openweathermap API, using async/await and Fetch API. Stored data to LocalStorage', 'https://github.com/ndrewbarz/weather-app', 'https://ndrewbarz.github.io/weather-app/', 'bootstrap', 'js', 'fetch', 'async/await', 'api'),
+	projFactory.create('Custom HTTP Lib', 'Library for making HTTP requests. You can make GET, POST, PUT and DELETE request\'s ', 'https://github.com/ndrewbarz/customHTTPLibrary', 'https://github.com/ndrewbarz/customHTTPLibrary', 'js', 'fetch', 'async/await')
 ];
 
 projects.forEach(p => {
@@ -40,13 +40,10 @@ projects.forEach(p => {
 // ——————————————————————————————————————————————————
 
 const phrases = [
-  'trainee/intern front-end developer',
-  'sooner or later',
-  'you\'re going to realize',
-  'just as I did',
-  'that there\'s a difference',
-  'between knowing the path',
-  'and walking the path'
+  'The only way to do great work',
+  'is to love what you do',
+  'If you haven’t found it yet',
+  'keep looking...',
 ];
 
 const el = document.querySelector('.text');
@@ -62,15 +59,15 @@ const next = () => {
 next();
 
 // Form Section
-const signUpButton = document.getElementById('signUp'),
-      signInButton = document.getElementById('signIn'),
+const toJokeButton = document.getElementById('toJoke'),
+      toFormButton = document.getElementById('toForm'),
       container = document.getElementById('contact-box');
 
-signUpButton.addEventListener('click', () => {
+toJokeButton.addEventListener('click', () => {
   container.classList.add('right-panel-active');
 });
 
-signInButton.addEventListener('click', () => {
+toFormButton.addEventListener('click', () => {
   container.classList.remove('right-panel-active');
 });
 
@@ -93,14 +90,12 @@ function getJokes(e) {
 }
 
 // Date
-
 const year = new Date();
 const date = document.querySelector(".date");
 date.textContent = year.getFullYear();
 
 
 // dark theme
-
 const themeSwitch = document.getElementById("switch");
 if (themeSwitch) {
   initTheme(); // on page load, if user has already selected a specific theme -> apply it
@@ -162,18 +157,10 @@ function toggleMenu() {
   if (!showMenu) {
     menuBtn.classList.add("active-menu-btn");
     navBox.classList.add("show-menu");
-    // navItems.classList.add('show-menu')
-    // navItem.forEach(item => {
-    //   item.classList.add('show-menu')
-    // });
     showMenu = true;
   } else {
     menuBtn.classList.remove("active-menu-btn");
     navBox.classList.remove("show-menu");
-    // navItems.classList.remove('show-menu')
-    // navItem.forEach(item => {
-    //   item.classList.remove('show-menu')
-    // });
     showMenu = false;
   }
 }
