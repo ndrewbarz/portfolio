@@ -6,6 +6,20 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Andrew Barzykin | Portfolio</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:900|Roboto+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+
+	<style>
+		.skill-list li::before {
+			background-image: url('assets/img/check-green-mark.svg'); 
+		}
+		.skill-list li.danger::before {
+			background-image: url('assets/img/check-red-mark.svg');
+		}
+		.project .demo::after,
+		.project .code::after {
+			background-image: url('assets/img/underline.svg');
+		}
+	</style>
 <link href="assets/css/main.css" rel="stylesheet"></head>
 <body>
 
@@ -31,14 +45,12 @@
 	</header>
 	
 	<div class="container main" id="main">
-
+	
 		<!-- Navigation -->
 		<nav class="nav">
 			<span class="logo-box">
 				<a href="#" class="logo">&#8249;ndrewbarz /&#8250;</a>
 			</span>
-			
-			
 			<div class="nav-box">
 				<ul class="nav-items">
 					<li class="nav-item"><a data-scroll href="#about">About</a></li>
@@ -46,185 +58,202 @@
 					<li class="nav-item"><a data-scroll href="#projects">Projects</a></li>
 					<li class="nav-item"><a data-scroll href="#contact">Contact</a></li>
 				</ul>
-			</div>
-			<a href="#" class="cv">
-				<img src="assets/img/icon-cv.png" alt="Resume" title="Resume">
-			</a>
-			<div class="switch">
-
-				<input class="container_toggle" type="checkbox" id="switch" name="mode">
-				<label for="switch">Toggle</label>
+				<a href="#" class="cv">
+					<img src="assets/img/icon-cv.svg" alt="Resume" title="Download resume">
+				</a>
+				<div class="switch">
+					<input class="container_toggle" type="checkbox" id="switch" name="mode">
+					<label for="switch" title="Switch theme">Toggle</label>
+				</div>
 			</div>
 			<div class="menu-btn">
 				<!-- <span></span> -->
 			</div>
 		</nav>
-
-			<!-- About Section -->
-			<section id="about" class="about">
-				<div class="bg-text-box">
-					<span class="bg-text">ABOUT</span>
-				</div>
-				<h1 class="title">Something about me...</h1>
-				<div class="about-box">
+	
+		<!-- About Section -->
+		<section id="about" class="about">
+			<div class="bg-text-box">
+				<span class="bg-text">ABOUT</span>
+			</div>
+			<h1 class="title">Something about me...</h1>
+			<div class="about-box">
+				<div class="about-box-info">
 					<div class="about-box-icon">
-						<img src="assets/img/about.svg" alt="" width="150px">
+						<img src="assets/img/about.svg" alt="About me" width="200px">
 					</div>
-					<div class="about-box-info">
-						<div>
-							<p>Hi, I'm Andrew, and interest in front-end development</p>
-							<p>В настоящее время интересуюсь front-end разработкой, изучаю JS и его применяю на практике в своих учебных проектах, параллельно изучаю(заменить!!!) библиотеку React в связке с Redux по курсам в интернете
-							</p>
-							<p>С некоторыми проектами Вы можете ознакомиться ниже</p>
-						</div>
+					<div class="about-text">
+						<p>Hi, i'm Andrew - junior/trainee developer with big ambitions!</p>
+						<p>In 2017 studied in academy "itstep" on web-development course.</p>
+						<p>After study i had basic knowledge in html5 & css3 and JavaScript.</p>
+						<p>Then started my self-education of more advanced concepts in front-end.</p>
+						<p>Some of the most important(popular) resources which had affected my progress: Udemy (Traversy Media | Brad Traversy, Juriy Bura), YouTube(Vladilen Minin, freeCodeCamp, Sorax), "learn.javascript", "developer.mozilla" and more others.</p>
+						<p>The knowledge gained from these sources i apply on my pet projects.
+							Some of them you can find below.</p>
+					</div>
+	
+					<a href="#projects" class="cta">
+						<span>View Projects</span>
+						<svg width="13px" height="10px" viewBox="0 0 13 10">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</section>
 
-						<a href="#projects" class="cta">
-							<span>View Projects</span>
-							<svg width="13px" height="10px" viewBox="0 0 13 10">
-								<path d="M1,5 L11,5"></path>
-								<polyline points="8 1 12 5 8 9"></polyline>
-							</svg>
-						</a>
+		
+		<!-- SKILLS 2.0 -->
+		<section class="skills" id="skills">
+			<div class="bg-text-box">
+				<span class="bg-text">SKILLS</span>
+			</div>
+			<h1 class="title">Skills</h1>
+			<!-- Chart -->
+			<div class="chart-container">
+				<canvas id="myChart"></canvas>
+			</div>
+			<div class="skills-box">
+				<div class="skill">
+					<img src="assets/img/html-skill.svg" alt="html">
+					<img src="assets/img/css-skill.svg" alt="css" class="hidden-img">
+					<h3 class="skill-title">HTML&CSS</h3>
+					<div class="skill-text">
+						<ul class="skill-list">
+							<li>Адаптивная верстка</li>
+							<li>Bootstrap 4 library, Skeleton boilerplate, Materialize framework</li>
+							<li>Flexbox, CSS Grid Layout</li>
+							<li>Sass preprocessor (variables, nesting, mixins)</li>
+						</ul>
 					</div>
 				</div>
-			</section>
-
-			<!-- SKILLS 2.0 -->
-			<section class="skills" id="skills">
-				<div class="bg-text-box">
-					<span class="bg-text">SKILLS</span>
-				</div>
-				<h1 class="title">Skills</h1>
-				<div class="skills-box">
-
-					<div class="skill">
-						<img src="assets/img/icon-css.png" alt="css">
-						<h3 class="skill-title">Title</h3>
-						<div class="skill-text">
-							Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-							Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-						</div>
-					</div>
-					<div class="skill">
-						<img src="assets/img/icon-css.png" alt="css">
-						<h3 class="skill-title">Title</h3>
-						<div class="skill-text">
-							Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-							Lorem ipsum dolor sit amet. L
-						</div>
-					</div>
-					<div class="skill">
-						<img src="assets/img/icon-css.png" alt="css">
-						<h3 class="skill-title">Title</h3>
-						<div class="skill-text">
-							isci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-							Lorem ipsum dolor sit amet.
-						</div>
-					</div>
-					<div class="skill">
-						<img src="assets/img/icon-css.png" alt="css">
-						<h3 class="skill-title">Title</h3>
-						<div class="skill-text">
-							Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-							Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-						</div>
-					</div>
-					<div class="skill">
-						<img src="assets/img/icon-css.png" alt="css">
-						<h3 class="skill-title">Title</h3>
-						<div class="skill-text">
-							Lorem ipsum doloLorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.
-							Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis neque sit nihil beatae adipisci rerum?
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, omnis.r sit amet.
-						</div>
+				<div class="skill">
+					<img src="assets/img/javascript-skill.svg" alt="JavaScript">
+					<h3 class="skill-title">JavaScript</h3>
+					<div class="skill-text">
+						<ul class="skill-list">
+							<li>DOM manipulation</li>
+							<li>Fetch API, XMLHttpRequest (XHR), Ajax</li>
+							<li>ES6 (destructuring, rest & spread operators, arrow function, template strings)</li>
+							<li>ES8 (async/await)</li>
+						</ul>
 					</div>
 				</div>
-			</section>
-
-			<!-- Projects Section -->
-			<section id="projects" class="projects">
-				<!-- <div class="container"> -->
-					<div class="bg-text-box">
-						<span class="bg-text">SERVICES</span>
+				<div class="skill">
+					<img src="assets/img/git-skill.svg" alt="git">
+					<h3 class="skill-title">GIT</h3>
+					<div class="skill-text">
+						<ul class="skill-list">
+							<li>Basic operations</li>
+						</ul>
 					</div>
-					<h1 class="title">My Projects</h1>
-					<div class="project-box">
-						
-					</div>
-				<!-- </div> -->
-			</section>
-			
-			<!-- Form Section -->
-			<section id="contact" class="contact">
-				<div class="bg-text-box">
-					<span class="bg-text">CONTACT</span>
 				</div>
-					<h1 class="title">Contact me</h1>
-					<div class="contact-box" id="contact-box">
-						<div class="form-container sign-up-container">
-							<form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-								<div hidden aria-hidden="true">
-									<label>
-										Don’t fill this out if you're  human: 
-										<input name="bot-field" />
-									</label>
-								</div>
-								<h1>Get in touch</h1>
-								<div class="social-container">
-									<a href="tel:+380996141367" class="social" target="_blank" title="Phone-number"><img src="assets/img/icon-phone.png" alt="Phone-number"></a>
-									<a href="https://github.com/ndrewbarz?tab=repositories" class="social" target="_blank" title="GitHub profile"><img src="assets/img/icon-octocat.png" alt="GitHub profile"></a>
-									<a href="tg://resolve?domain=ndrewbarz" class="social" target="_blank" title="Telegram"><img src="assets/img/icon-telegram.png" alt="Telegram"></a>
-									<a href="https://www.linkedin.com/in/andrew-barzykin" class="social" target="_blank" title="Linkedin"><img src="assets/img/icon-linkedin.png" alt="Linkedin"></a>
-								</div>
-								<span>Use this form to send me a message</span>
-								<input required class="contact-name" type="text" name="name" placeholder="Name/Company" minlength="3" />
-								<input required class="contact-email" type="email" name="email" placeholder="Email" />
-								<textarea required class="contact-message" name="message" id="message" cols="30" rows="6" placeholder="Message" minlength="5"></textarea>
-								<button class="submit-btn" type="submit">Send message</button>
-							</form>
+				<div class="skill">
+					<img src="assets/img/react-skill.svg" alt="react">
+					<h3 class="skill-title">React</h3>
+					<div class="skill-text">
+						<ul class="skill-list">
+							<li>Components</li>
+							<li>JSX</li>
+							<li>css modules</li>
+							<li>props</li>
+							<li>React Router (simple routing)</li>
+							<li>in progress...</li>
+							<li class="danger">Redux</li>
+							<li class="danger">react-redux</li>
+						</ul>
+					</div>
+				</div>
+				<div class="skill">
+					<img src="assets/img/file-skill.svg" alt="other">
+					<h3 class="skill-title">Other</h3>
+					<div class="skill-text">
+						<ul class="skill-list">
+							<li>Webpack (simple front-end setup, loaders, plugins)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Projects Section -->
+		<section id="projects" class="projects">
+			<div class="bg-text-box">
+				<span class="bg-text">SERVICES</span>
+			</div>
+			<h1 class="title">My Projects</h1>
+			<div class="project-box">
+			</div>
+		</section>
+		
+		<!-- Form Section -->
+		<section id="contact" class="contact">
+			<div class="bg-text-box">
+				<span class="bg-text">CONTACT</span>
+			</div>
+			<h1 class="title">Contact me</h1>
+			<div class="contact-box" id="contact-box">
+				<div class="form-container get-in-touch-container">
+					<form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+						<div hidden aria-hidden="true">
+							<label>
+								Don’t fill this out if you're human:
+								<input name="bot-field" />
+							</label>
 						</div>
-						<div class="form-container sign-in-container">
-							<div class="jokes-container">
-								<h1>Generate Chuck Norris Jokes</h1>
-								<img src="assets/img/icon-chuck.png" alt="Chuck Norris" class="icon">
-								<p class="joke"></p>
-								<button class="get-jokes">Get Jokes</button>
+						<h1>Get in touch</h1>
+						<div class="social-container">
+							<a href="tel:+380996141367" class="social" target="_blank" title="Phone-number"><img
+									src="assets/img/icon-phone.png" alt="Phone-number"></a>
+							<a href="https://github.com/ndrewbarz?tab=repositories" class="social" target="_blank"
+								title="GitHub profile"><img src="assets/img/icon-octocat.png" alt="GitHub profile"></a>
+							<a href="tg://resolve?domain=ndrewbarz" class="social" target="_blank" title="Telegram"><img
+									src="assets/img/icon-telegram.png" alt="Telegram"></a>
+							<a href="https://www.linkedin.com/in/andrew-barzykin" class="social" target="_blank" title="Linkedin"><img
+									src="assets/img/icon-linkedin.png" alt="Linkedin"></a>
+						</div>
+						<span>Use this form to send me a message</span>
+						<input required class="contact-name" type="text" name="name" placeholder="Name/Company" minlength="3" />
+						<input required class="contact-email" type="email" name="email" placeholder="Email" />
+						<textarea required class="contact-message" name="message" id="message" cols="30" rows="6" placeholder="Message"
+							minlength="5"></textarea>
+						<button class="submit-btn" type="submit">Send message</button>
+					</form>
+				</div>
+				<div class="form-container joke-container">
+					<div class="jokes-container">
+						<h1>Generate Chuck Norris Jokes</h1>
+						<img src="assets/img/icon-chuck.png" alt="Chuck Norris" class="icon">
+						<p class="joke"></p>
+						<button class="get-jokes">Get Jokes</button>
+					</div>
+				</div>
+				<div class="overlay-container">
+					<div class="overlay">
+						<div class="overlay-panel overlay-left">
+							<h1>Just for some fun ;)</h1>
+							<p>It's simple generator of Chuck Norris jokes used external API, have a nice day!</p>
+							<button class="ghost" id="toForm">Back to form</button>
+						</div>
+						<div class="overlay-panel overlay-right">
+							<div class="overlay-img">
+								<object type="image/svg+xml" data="assets/img/mail-sent.svg" width="100px" height="100px">
+									Your browser does not support SVG
+								</object>
 							</div>
-						</div>
-						<div class="overlay-container">
-							<div class="overlay">
-								<div class="overlay-panel overlay-left">
-									<h1>Just for some fun ;)</h1>
-									<p>It's simple generator of Chuck Norris jokes used external API, have a nice day!</p>
-									<button class="ghost" id="signIn">Back to form</button>
-								</div>
-								<div class="overlay-panel overlay-right">
-									<div class="overlay-img">
-										<object type="image/svg+xml" data="assets/img/mail-sent.svg" width="100px" height="100px">
-											Your  browser does not support SVG 
-										</object>
-									</div>
-									<h1>Hello there!</h1>
-									<p>Take one of the options to contact me</p>
-									<button class="ghost" id="signUp">Move to...</button>
-								</div>
-							</div>
+							<h1>Hello there!</h1>
+							<p>Take one of the options to contact me</p>
+							<button class="ghost" id="toJoke">Move to...</button>
 						</div>
 					</div>
-			</section>
-
-		</div>
+				</div>
+			</div>
+		</section>
+		
 		<!-- Footer -->
 		<section id="footer" class="footer">
 			<div class="footer-box">
-				<div class="footer-links">
 					<nav class="footer-nav">
 						<ul>
 							<li><a href="#about">About</a></li>
@@ -233,7 +262,6 @@
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
-				</div>
 				<div class="copyright">
 					<p>&copy; ndrewbarz. <span class="date"></span></p>
 				</div>
@@ -249,7 +277,8 @@
 				</div>
 			</div>
 		</section>
-
+		</div>
+		
 		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script></body>
 </html>
