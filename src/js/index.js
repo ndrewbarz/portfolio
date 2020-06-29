@@ -1,17 +1,17 @@
 import { HeaderComponent } from '../components/Header';
 import { MainContainerComponent } from '../components/MainContainer';
 import { Chart } from '../components/Chart.js';
-import { ProjectFactory } from '../components/Projects';
+import { data } from '../components/data';
+import { projectsList } from '../components/projects';
 import { TextScramble } from '../components/TextPhrases';
 import { Jokes } from '../components/ChuckJokes';
 import { UI } from '../components/ChuckUi';
 import Swal from 'sweetalert2';
 
-import {validateName, validateEmail} from '../components/isValid'
+import { validateName, validateEmail } from '../components/isValid';
 
 // import '../css/style.css';
 import '../scss/style.scss';
-
 
 // Preview
 const header = new HeaderComponent('header');
@@ -21,19 +21,8 @@ const main = new MainContainerComponent('main');
 
 // Chart
 
-// Projects Factory
-const projFactory = new ProjectFactory();
-const projects = [
-	projFactory.create('GitHub Search App', 'Search GitHub users by username, display profile info. Using async/await and Fetch API to get the user from GitHub API', 'https://github.com/ndrewbarz/searchapp', 'https://ndrewbarz.github.io/searchapp/', 'bootstrap', 'js', 'fetch', 'async/await', 'api'),
-	projFactory.create('Chuck Norris', 'A simple app that uses a third-party API to display Chuck Norris jokes, interacts with the API using asynchronous functions and a Fetch API', 'https://github.com/ndrewbarz/chuck-norris-joke', 'https://ndrewbarz.github.io/chuck-norris-joke/', 'js', 'fetch', 'api'),
-	projFactory.create('Weather App', 'Show current weather, you can change the location. Created by openweathermap API, using async/await and Fetch API. Stored data to LocalStorage', 'https://github.com/ndrewbarz/weather-app', 'https://ndrewbarz.github.io/weather-app/', 'bootstrap', 'js', 'fetch', 'async/await', 'api'),
-	projFactory.create('Custom HTTP Lib', 'Library for making HTTP requests. You can make GET, POST, PUT and DELETE request\'s ', 'https://github.com/ndrewbarz/customHTTPLibrary', 'https://github.com/ndrewbarz/customHTTPLibrary', 'js', 'fetch', 'async/await')
-];
-
-projects.forEach(p => {
-	return p;
-});
-
+// Projects
+projectsList(data);
 
 // ——————————————————————————————————————————————————
 // Text phrases
@@ -53,15 +42,15 @@ let counter = 0;
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
     setTimeout(next, 800);
-  })
+  });
   counter = (counter + 1) % phrases.length;
-}
+};
 next();
 
 // Form Section
 const toJokeButton = document.getElementById('toJoke'),
-      toFormButton = document.getElementById('toForm'),
-      container = document.getElementById('contact-box');
+  toFormButton = document.getElementById('toForm'),
+  container = document.getElementById('contact-box');
 
 toJokeButton.addEventListener('click', () => {
   container.classList.add('right-panel-active');
@@ -75,101 +64,100 @@ toFormButton.addEventListener('click', () => {
 const jokes = new Jokes();
 const ui = new UI();
 
-document.addEventListener("DOMContentLoaded", getJokes);
+document.addEventListener('DOMContentLoaded', getJokes);
 const getRandomJoke = document
-  .querySelector(".get-jokes")
-  .addEventListener("click", getJokes);
+  .querySelector('.get-jokes')
+  .addEventListener('click', getJokes);
 
 function getJokes(e) {
   e.preventDefault();
-	jokes.getJoke()
-		.then(results => {
-			ui.paint(results);
-		})
-		.catch(err => console.log(err));
+  jokes
+    .getJoke()
+    .then((results) => {
+      ui.paint(results);
+    })
+    .catch((err) => console.log(err));
 }
 
 // Date
 const year = new Date();
-const date = document.querySelector(".date");
+const date = document.querySelector('.date');
 date.textContent = year.getFullYear();
 
-
 // dark theme
-const themeSwitch = document.getElementById("switch");
+const themeSwitch = document.getElementById('switch');
 if (themeSwitch) {
   initTheme(); // on page load, if user has already selected a specific theme -> apply it
 
-  themeSwitch.addEventListener("change", function(e) {
+  themeSwitch.addEventListener('change', function (e) {
     resetTheme(); // update color theme
   });
 
   function initTheme() {
     const darkThemeSelected =
-      localStorage.getItem("themeSwitch") !== null &&
-      localStorage.getItem("themeSwitch") === "dark";
+      localStorage.getItem('themeSwitch') !== null &&
+      localStorage.getItem('themeSwitch') === 'dark';
     // update checkbox
     themeSwitch.checked = darkThemeSelected;
     // update body data-theme attribute
     darkThemeSelected
-      ? document.body.classList.add("dark")
-      : document.body.classList.remove("dark");
+      ? document.body.classList.add('dark')
+      : document.body.classList.remove('dark');
   }
 
   function resetTheme() {
     if (themeSwitch.checked) {
       // dark theme has been selected
-      document.body.classList.add("dark");
-      localStorage.setItem("themeSwitch", "dark"); // save theme selection
+      document.body.classList.add('dark');
+      localStorage.setItem('themeSwitch', 'dark'); // save theme selection
     } else {
-      document.body.classList.remove("dark");
-      localStorage.removeItem("themeSwitch"); // reset theme selection
+      document.body.classList.remove('dark');
+      localStorage.removeItem('themeSwitch'); // reset theme selection
     }
   }
 }
 
 // nav shadow
-window.addEventListener("scroll", e => {
-  const nav = document.querySelector(".nav");
+window.addEventListener('scroll', (e) => {
+  const nav = document.querySelector('.nav');
   window.scrollY >= 1
-    ? nav.classList.add("scroll")
-    : nav.classList.remove("scroll");
+    ? nav.classList.add('scroll')
+    : nav.classList.remove('scroll');
 });
 
 // smooth scroll
 
 const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000
+  speed: 1000,
 });
 
 // Toggle nav
-const menuBtn = document.querySelector(".menu-btn"),
-      navBox = document.querySelector(".nav-box"),
-      navItems = document.querySelector(".nav-items"),
-      navItem = document.querySelectorAll(".nav-item"),
-      nav = document.querySelector(".nav");
+const menuBtn = document.querySelector('.menu-btn'),
+  navBox = document.querySelector('.nav-box'),
+  navItems = document.querySelector('.nav-items'),
+  navItem = document.querySelectorAll('.nav-item'),
+  nav = document.querySelector('.nav');
 
 let showMenu = false;
 
-menuBtn.addEventListener("click", toggleMenu);
+menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
   if (!showMenu) {
-    menuBtn.classList.add("active-menu-btn");
-    navBox.classList.add("show-menu");
+    menuBtn.classList.add('active-menu-btn');
+    navBox.classList.add('show-menu');
     showMenu = true;
   } else {
-    menuBtn.classList.remove("active-menu-btn");
-    navBox.classList.remove("show-menu");
+    menuBtn.classList.remove('active-menu-btn');
+    navBox.classList.remove('show-menu');
     showMenu = false;
   }
 }
 
-
 // hide & toggle nav buttons (cv & switcher)
-let cv = document.querySelector(".cv"),
-    switchBox = document.querySelector(".switch"),
-    mq = window.matchMedia("(max-width: 500px)");
+let cv = document.querySelector('.cv'),
+  switchBox = document.querySelector('.switch'),
+  mq = window.matchMedia('(max-width: 500px)');
 
 function test(e) {
   if (e.matches) {
@@ -181,25 +169,23 @@ function test(e) {
 
 mq.addListener(test);
 
-
 // accordion
-const skillItem = document.querySelectorAll(".skill");
+const skillItem = document.querySelectorAll('.skill');
 
-function toggleAccordion(e){
+function toggleAccordion(e) {
   this.classList.toggle('active-skill');
   this.querySelector('.skill-text').classList.toggle('active-skill');
 }
 
-skillItem.forEach(item => item.addEventListener('click', toggleAccordion));
-
+skillItem.forEach((item) => item.addEventListener('click', toggleAccordion));
 
 // Submit forms via AJAX
-const form = document.querySelector(".contact-form");
-const nameInput = document.querySelector(".contact-name");
-const emailInput = document.querySelector(".contact-email");
+const form = document.querySelector('.contact-form');
+const nameInput = document.querySelector('.contact-name');
+const emailInput = document.querySelector('.contact-email');
 const [, ...elms] = form.elements;
 if (form) {
-  form.addEventListener("submit", e => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (validateName(nameInput.value) && validateEmail(emailInput.value)) {
       processForm(form);
@@ -207,34 +193,34 @@ if (form) {
   });
 }
 
-const processForm = form => {
+const processForm = (form) => {
   const data = new FormData(form);
-  data.append("form-name", "contact");
-  fetch("/", {
-    method: "POST",
-    body: data
+  data.append('form-name', 'contact');
+  fetch('/', {
+    method: 'POST',
+    body: data,
   })
     .then(() => {
-      let name = data.getAll("name").join("");
+      let name = data.getAll('name').join('');
       Swal.fire({
-        position: "top",
-        icon: "success",
+        position: 'top',
+        icon: 'success',
         title: `Thank You, ${name}`,
         showConfirmButton: false,
-        timer: 1500
+        timer: 1500,
       });
-      elms.forEach(el => {
-        el.value = "";
+      elms.forEach((el) => {
+        el.value = '';
       });
     })
-    .catch(error => {
+    .catch((error) => {
       Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
+        position: 'top',
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
         showConfirmButton: false,
-        timer: 1500
+        timer: 1500,
       });
     });
 };
