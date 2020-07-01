@@ -1,7 +1,7 @@
 import { HeaderComponent } from '../components/Header';
 import { MainContainerComponent } from '../components/MainContainer';
-import { Chart } from '../components/Chart.js';
 import { data } from '../components/data';
+import { toggleAccordion } from '../components/skills';
 import { projectsList } from '../components/projects';
 import { TextScramble } from '../components/TextPhrases';
 import { Jokes } from '../components/ChuckJokes';
@@ -20,7 +20,8 @@ const header = new HeaderComponent('header');
 // Main Container
 const main = new MainContainerComponent('main');
 
-// Chart
+// Skills
+toggleAccordion();
 
 // Projects
 projectsList(data);
@@ -135,14 +136,14 @@ function test(e) {
 mq.addListener(test);
 
 // accordion
-const skillItem = document.querySelectorAll('.skill');
+// const skillItem = document.querySelectorAll('.skill');
 
-function toggleAccordion(e) {
-  this.classList.toggle('active-skill');
-  this.querySelector('.skill-text').classList.toggle('active-skill');
-}
+// function toggleAccordion(e) {
+//   this.classList.toggle('active-skill');
+//   this.querySelector('.skill-text').classList.toggle('active-skill');
+// }
 
-skillItem.forEach((item) => item.addEventListener('click', toggleAccordion));
+// skillItem.forEach((item) => item.addEventListener('click', toggleAccordion));
 
 // Submit forms via AJAX
 const form = document.querySelector('.contact-form');
