@@ -9,18 +9,22 @@ export const projectsList = (arr) => {
     const tags = el.tags.join(', ');
     template = `
     <div class="project">
+      <div class="project-icon">
+        <img src="assets/img/project.svg" alt="Project icon">
+      </div>
     
       <div class="project-title">
-        <h1>${el.name}</h1>
+        <h3>${el.name}</h3>
+      </div>
+      <div class="project-desc">
+        <p>${el.desc}</p>
       </div>
       
-      <p>${el.desc}</p>
-      
-      <div class="tags">
+      <div class="project-tags">
         <span class="tag">${tags}</span>
       </div>
   
-      <div class="links">
+      <div class="project-links">
         <a class="code" href="${el.codeLink}" target="_blank">Source</a>
         <a class="demo" href="${el.demoLink}" target="_blank">View</a>
       </div>

@@ -1,51 +1,67 @@
 // dark mode
 .dark {
-	background: $primary-color;
+  background: $primary-color;
   color: #e6e9f0;
 
   .show-menu {
     background: $primary-color;
   }
-  
-	.nav {
+
+  .nav {
     background: $primary-color;
-		.nav-box a {color: #798499;}
-		.logo {
-			color: #798499;
-			&:hover {color: $highlight-color;}
-		}
+
+    .nav-box a {
+      color: #b3b9c5;
+    }
+
+    .nav-box a:hover {
+      color: #fff;
+    }
+
+    .logo {
+      color: #b3b9c5;
+
+      &:hover {
+        color: $highlight-color;
+      }
+    }
   }
 
-  .nav .menu-btn:after, .nav .menu-btn:before {
-      background: $secondary-color;
-    }
-    .nav .menu-btn:before {
-      box-shadow: $secondary-color 0 14px 0 0;
-    }
-    nav .menu-btn.active-menu-btn {
-      &::before {
-        box-shadow: transparent 0 0 0 0;
+  .nav .menu-btn:after,
+  .nav .menu-btn:before {
+    background: $secondary-color;
+  }
+
+  .nav .menu-btn:before {
+    box-shadow: $secondary-color 0 14px 0 0;
+  }
+
+  nav .menu-btn.active-menu-btn {
+    &::before {
+      box-shadow: transparent 0 0 0 0;
     }
   }
 
   section:not(.footer) {
-    border-bottom: 1px solid rgba(58,169,252,.04);
+    border-bottom: 1px solid rgba(58, 169, 252, .04);
   }
 
   .title {
     color: #b3b9c5;
   }
-  
+
   .about-box {
     box-shadow: 0 14px 26px rgba($light-red-color, 0.04);
   }
 
   .skills .skill {
-		box-shadow: 0 1px 1px rgba($light-green-color,0.04);
+    box-shadow: 0 1px 1px rgba($light-green-color, 0.04);
+
     &:hover {
-			box-shadow: 0 1px 4px rgba(71, 74, 64, 0.5);
+      box-shadow: 0 1px 4px rgba(71, 74, 64, 0.5);
     }
   }
+
   .skill.active-skill {
     box-shadow: 0 1px 4px rgba(71, 74, 64, 0.5);
   }
@@ -53,17 +69,22 @@
   .project {
     background: $primary-color !important;
     box-shadow: 0 14px 26px rgba($light-purple-color, 0.04) !important;
+
     &:hover {
       box-shadow: 0 14px 26px rgba($light-purple-color, 0.11) !important;
     }
-    
+
   }
+
   .project-box .project .code,
   .project-box .project .demo {
     color: $secondary-color;
   }
-  
-  .contact-box {color: #232323;}
+
+  .contact-box {
+    color: #232323;
+  }
+
   #container {
     box-shadow: 0 14px 26px rgba(58, 169, 252, 0.04);
 
@@ -71,13 +92,23 @@
 
   .footer {
     // box-shadow: 0 14px 26px rgba(58, 169, 252, 0.11);
-    border: 1px solid rgba(58, 169, 252, 0.04);
+    // border: 1px solid rgba(58, 169, 252, 0.04);
     color: #b3b9c5;
+
     &-nav a {
       color: #b3b9c5;
     }
+
+    &-nav a:hover {
+      color: #fff;
+    }
+
     .social-container a {
       background: #b3b9c5;
+    }
+
+    .social-container a:hover {
+      background: #fff;
     }
   }
 
@@ -118,14 +149,14 @@ label:after {
   position: absolute;
   top: 5px;
   left: 4px;
- transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
 }
 
-input:checked + label {
-  background: $light-orange-color;
+input:checked+label {
+  background: $highlight-color;
 }
 
-input:checked + label:after {
+input:checked+label:after {
   left: calc(100% - 5px);
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);

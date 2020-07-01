@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Andrew Barzykin | Portfolio</title>
+	<!-- <link rel="icon" type="image/svg+xml" href="assets/img/code.svg"> -->
+	<link rel="icon" type="image/png" href="favicon.png">
+	<!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01"> -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:900|Roboto+Mono&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 
 	<style>
 		.skill-list li::before {
-			background-image: url('assets/img/check-green-mark.svg'); 
+			background-image: url('assets/img/check-green-mark.svg');
 		}
+
 		.skill-list li.danger::before {
 			background-image: url('assets/img/check-red-mark.svg');
 		}
+
 		.project .demo::after,
 		.project .code::after {
 			background-image: url('assets/img/underline.svg');
 		}
+
+
+
+		.about {
+			background-image: url('assets/img/about-text.svg');
+		}
+
+		.skills {
+			background-image: url('assets/img/skills-text.svg');
+		}
+
+		.projects {
+			background-image: url('assets/img/projects-text.svg');
+		}
+
+		.contact {
+			background-image: url('assets/img/contact-text.svg');
+		}
 	</style>
 </head>
+
 <body>
 
 	<!-- Header -->
 	<header id="header">
+		<div class="vector-top">
+			<img src="assets/img/header/Vector1.svg" alt="">
+		</div>
+		<div class="vector-bottom">
+			<img src="assets/img/header/Vector2.svg" alt="">
+		</div>
 		<div class="header-box">
 			<img src="assets/img/avatar.jpg" alt="Andrew Barzykin" class="avatar">
 			<h1><span>Hi</span>, i'm Andrew Barzykin</h1>
@@ -35,17 +66,14 @@
 			</div>
 		</div>
 		<div class="triangles">
-			<img src="assets/img/triangle-1.svg" alt="">
-			<img src="assets/img/triangle-2.svg" alt="">
-			<img src="assets/img/triangle-3.svg" alt="">
-			<img src="assets/img/triangle-4.svg" alt="">
-			<img src="assets/img/triangle-5.svg" alt="">
-			<img src="assets/img/triangle-6.svg" alt="">
+			<img src="assets/img/header/Rect1.svg" alt="">
+			<img src="assets/img/header/Rect5.svg" alt="">
+			<img src="assets/img/header/Rect6.svg" alt="">
 		</div>
 	</header>
-	
+
 	<div class="container main" id="main">
-	
+
 		<!-- Navigation -->
 		<nav class="nav">
 			<span class="logo-box">
@@ -70,12 +98,10 @@
 				<!-- <span></span> -->
 			</div>
 		</nav>
-	
+
 		<!-- About Section -->
 		<section id="about" class="about">
-			<div class="bg-text-box">
-				<span class="bg-text">ABOUT</span>
-			</div>
+			<!-- <div class="bg-text-box"></div> -->
 			<h1 class="title">Something about me...</h1>
 			<div class="about-box">
 				<div class="about-box-info">
@@ -87,11 +113,13 @@
 						<p>In 2017 studied in academy "itstep" on web-development course.</p>
 						<p>After study i had basic knowledge in html5 & css3 and JavaScript.</p>
 						<p>Then started my self-education of more advanced concepts in front-end.</p>
-						<p>Some of the most important(popular) resources which had affected my progress: Udemy (Traversy Media | Brad Traversy, Juriy Bura), YouTube(Vladilen Minin, freeCodeCamp, Sorax), "learn.javascript", "developer.mozilla" and more others.</p>
+						<p>Some of the most important(popular) resources which had affected my progress: Udemy (Traversy Media |
+							Brad Traversy, Juriy Bura), YouTube(Vladilen Minin, freeCodeCamp, Sorax), "learn.javascript",
+							"developer.mozilla" and more others.</p>
 						<p>The knowledge gained from these sources i apply on my pet projects.
 							Some of them you can find below.</p>
 					</div>
-	
+
 					<a href="#projects" class="cta">
 						<span>View Projects</span>
 						<svg width="13px" height="10px" viewBox="0 0 13 10">
@@ -103,12 +131,10 @@
 			</div>
 		</section>
 
-		
+
 		<!-- SKILLS 2.0 -->
 		<section class="skills" id="skills">
-			<div class="bg-text-box">
-				<span class="bg-text">SKILLS</span>
-			</div>
+			<div class="bg-text-box"></div>
 			<h1 class="title">Skills</h1>
 			<!-- Chart -->
 			<div class="chart-container">
@@ -116,8 +142,8 @@
 			</div>
 			<div class="skills-box">
 				<div class="skill">
-					<img src="assets/img/html-skill.svg" alt="html">
-					<img src="assets/img/css-skill.svg" alt="css" class="hidden-img">
+					<img src="assets/img/skills/html-skill.svg" alt="html">
+					<img src="assets/img/skills/css-skill.svg" alt="css" class="hidden-img">
 					<h3 class="skill-title">HTML&CSS</h3>
 					<div class="skill-text">
 						<ul class="skill-list">
@@ -129,7 +155,7 @@
 					</div>
 				</div>
 				<div class="skill">
-					<img src="assets/img/javascript-skill.svg" alt="JavaScript">
+					<img src="assets/img/skills/javascript-skill.svg" alt="JavaScript">
 					<h3 class="skill-title">JavaScript</h3>
 					<div class="skill-text">
 						<ul class="skill-list">
@@ -141,7 +167,7 @@
 					</div>
 				</div>
 				<div class="skill">
-					<img src="assets/img/git-skill.svg" alt="git">
+					<img src="assets/img/skills/git-skill.svg" alt="git">
 					<h3 class="skill-title">GIT</h3>
 					<div class="skill-text">
 						<ul class="skill-list">
@@ -150,7 +176,7 @@
 					</div>
 				</div>
 				<div class="skill">
-					<img src="assets/img/react-skill.svg" alt="react">
+					<img src="assets/img/skills/react-skill.svg" alt="react">
 					<h3 class="skill-title">React</h3>
 					<div class="skill-text">
 						<ul class="skill-list">
@@ -166,7 +192,7 @@
 					</div>
 				</div>
 				<div class="skill">
-					<img src="assets/img/file-skill.svg" alt="other">
+					<img src="assets/img/skills/file-skill.svg" alt="other">
 					<h3 class="skill-title">Other</h3>
 					<div class="skill-text">
 						<ul class="skill-list">
@@ -176,22 +202,18 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<!-- Projects Section -->
 		<section id="projects" class="projects">
-			<div class="bg-text-box">
-				<span class="bg-text">SERVICES</span>
-			</div>
+			<div class="bg-text-box"></div>
 			<h1 class="title">My Projects</h1>
 			<div class="project-box">
 			</div>
 		</section>
-		
+
 		<!-- Form Section -->
 		<section id="contact" class="contact">
-			<div class="bg-text-box">
-				<span class="bg-text">CONTACT</span>
-			</div>
+			<div class="bg-text-box"></div>
 			<h1 class="title">Contact me</h1>
 			<div class="contact-box" id="contact-box">
 				<div class="form-container get-in-touch-container">
@@ -216,8 +238,8 @@
 						<span>Use this form to send me a message</span>
 						<input required class="contact-name" type="text" name="name" placeholder="Name/Company" minlength="3" />
 						<input required class="contact-email" type="email" name="email" placeholder="Email" />
-						<textarea required class="contact-message" name="message" id="message" cols="30" rows="6" placeholder="Message"
-							minlength="5"></textarea>
+						<textarea required class="contact-message" name="message" id="message" cols="30" rows="6"
+							placeholder="Message" minlength="5"></textarea>
 						<button class="submit-btn" type="submit">Send message</button>
 					</form>
 				</div>
@@ -250,26 +272,26 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<!-- Footer -->
 		<section id="footer" class="footer">
 			<div class="footer-box">
-					<nav class="footer-nav">
-						<ul>
-							<li><a href="#about">About</a></li>
-							<li><a href="#skills">Skills</a></li>
-							<li><a href="#projects">Projects</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</nav>
+				<nav class="footer-nav">
+					<ul>
+						<li><a href="#about">About</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
 				<div class="copyright">
 					<p>&copy; ndrewbarz. <span class="date"></span></p>
 				</div>
 				<div class="social-container">
 					<a href="tel:+380996141367" class="social" target="_blank" title="Phone-number"><img
 							src="assets/img/icon-phone.png" alt="Phone-number"></a>
-					<a href="https://github.com/ndrewbarz?tab=repositories" class="social" target="_blank" title="GitHub profile"><img
-							src="assets/img/icon-octocat.png" alt="GitHub profile"></a>
+					<a href="https://github.com/ndrewbarz?tab=repositories" class="social" target="_blank"
+						title="GitHub profile"><img src="assets/img/icon-octocat.png" alt="GitHub profile"></a>
 					<a href="tg://resolve?domain=ndrewbarz" class="social" target="_blank" title="Telegram"><img
 							src="assets/img/icon-telegram.png" alt="Telegram"></a>
 					<a href="https://www.linkedin.com/in/andrew-barzykin" class="social" target="_blank" title="Linkedin"><img
@@ -277,8 +299,10 @@
 				</div>
 			</div>
 		</section>
-		</div>
-		
-		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
 </body>
+
 </html>

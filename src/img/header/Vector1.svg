@@ -1,0 +1,9 @@
+<svg width="426" height="367" viewBox="0 0 426 367" fill="#243b55" opacity="1" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="shadow" x="-10%" y="-10%" height="120%" >
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+  </filter>
+</defs>
+<path fill="#141e30" filter="url(#shadow)" d="M157 333C144.2 366.6 47.6667 368.333 1 365V1H401C428.667 51.6667 455 158.8 339 182C194 211 173 291 157 333Z" />
+<path  transform="translate(-5.5 -3.5)" d="M157 333C144.2 366.6 47.6667 368.333 1 365V1H401C428.667 51.6667 455 158.8 339 182C194 211 173 291 157 333Z" />
+</svg>
