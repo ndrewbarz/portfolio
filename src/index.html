@@ -13,19 +13,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 
 	<style>
-		.skill-list li::before {
+		.accordion-list-content li::before {
 			background-image: url('assets/img/check-green-mark.svg');
 		}
 
-		.skill-list li.danger::before {
+		.accordion-list-content li.danger::before {
 			background-image: url('assets/img/check-red-mark.svg');
 		}
-
-		.project .demo::after,
-		.project .code::after {
-			background-image: url('assets/img/underline.svg');
-		}
-
 
 
 		.about {
@@ -132,73 +126,98 @@
 		</section>
 
 
-		<!-- SKILLS 2.0 -->
+		<!-- SKILLS -->
 		<section class="skills" id="skills">
 			<div class="bg-text-box"></div>
 			<h1 class="title">Skills</h1>
-			<!-- Chart -->
-			<div class="chart-container">
-				<canvas id="myChart"></canvas>
-			</div>
 			<div class="skills-box">
-				<div class="skill">
-					<img src="assets/img/skills/html-skill.svg" alt="html">
-					<img src="assets/img/skills/css-skill.svg" alt="css" class="hidden-img">
-					<h3 class="skill-title">HTML&CSS</h3>
-					<div class="skill-text">
-						<ul class="skill-list">
-							<li>Адаптивная верстка</li>
-							<li>Bootstrap 4 library, Skeleton boilerplate, Materialize framework</li>
-							<li>Flexbox, CSS Grid Layout</li>
-							<li>Sass preprocessor (variables, nesting, mixins)</li>
-						</ul>
-					</div>
-				</div>
-				<div class="skill">
-					<img src="assets/img/skills/javascript-skill.svg" alt="JavaScript">
-					<h3 class="skill-title">JavaScript</h3>
-					<div class="skill-text">
-						<ul class="skill-list">
-							<li>DOM manipulation</li>
-							<li>Fetch API, XMLHttpRequest (XHR), Ajax</li>
-							<li>ES6 (destructuring, rest & spread operators, arrow function, template strings)</li>
-							<li>ES8 (async/await)</li>
-						</ul>
-					</div>
-				</div>
-				<div class="skill">
-					<img src="assets/img/skills/git-skill.svg" alt="git">
-					<h3 class="skill-title">GIT</h3>
-					<div class="skill-text">
-						<ul class="skill-list">
-							<li>Basic operations</li>
-						</ul>
-					</div>
-				</div>
-				<div class="skill">
-					<img src="assets/img/skills/react-skill.svg" alt="react">
-					<h3 class="skill-title">React</h3>
-					<div class="skill-text">
-						<ul class="skill-list">
-							<li>Components</li>
-							<li>JSX</li>
-							<li>css modules</li>
-							<li>props</li>
-							<li>React Router (simple routing)</li>
-							<li>in progress...</li>
-							<li class="danger">Redux</li>
-							<li class="danger">react-redux</li>
-						</ul>
-					</div>
-				</div>
-				<div class="skill">
-					<img src="assets/img/skills/file-skill.svg" alt="other">
-					<h3 class="skill-title">Other</h3>
-					<div class="skill-text">
-						<ul class="skill-list">
-							<li>Webpack (simple front-end setup, loaders, plugins)</li>
-						</ul>
-					</div>
+				<div class="accordion">
+					<ul class="accordion-list">
+						<li class="accordion-list-item">
+							<h2>
+								<img src="assets/img/skills/skill-css.svg" alt="css html">
+								HTML&CSS
+							</h2>
+							<span class="chevron">
+								<img class="chevron-img" src="assets/img/skills/chevron.svg" alt="chevron">
+							</span>
+							<div class="accordion-list-content">
+								<ul class="skill-list">
+									<li>Адаптивная верстка</li>
+									<li>Bootstrap 4 library, Skeleton boilerplate, Materialize framework</li>
+									<li>Flexbox, CSS Grid Layout</li>
+									<li>Sass preprocessor (variables, nesting, mixins)</li>
+								</ul>
+							</div>
+						</li>
+						<li class="accordion-list-item">
+							<h2>
+								<img src="assets/img/skills/skill-js.svg" alt="js">
+								JavaScript
+							</h2>
+							<span class="chevron">
+								<img class="chevron-img" src="assets/img/skills/chevron.svg" alt="chevron">
+							</span>
+							<div class="accordion-list-content">
+								<ul class="skill-list">
+									<li>DOM manipulation</li>
+									<li>Fetch API, XMLHttpRequest (XHR), Ajax</li>
+									<li>ES6 (destructuring, rest & spread operators, arrow function, template strings)</li>
+									<li>ES8 (async/await)</li>
+								</ul>
+							</div>
+						</li>
+						<li class="accordion-list-item">
+							<h2>
+								<img src="assets/img/skills/skill-git.svg" alt="git">
+								GIT
+							</h2>
+							<span class="chevron">
+								<img class="chevron-img" src="assets/img/skills/chevron.svg" alt="chevron">
+							</span>
+							<div class="accordion-list-content">
+								<ul class="skill-list">
+									<li>Basic operations</li>
+								</ul>
+							</div>
+						</li>
+						<li class="accordion-list-item">
+							<h2>
+								<img src="assets/img/skills/skill-react.svg" alt="raect">
+								React
+							</h2>
+							<span class="chevron">
+								<img class="chevron-img" src="assets/img/skills/chevron.svg" alt="chevron">
+							</span>
+							<div class="accordion-list-content">
+								<ul class="skill-list">
+									<li>Components</li>
+									<li>JSX</li>
+									<li>css modules</li>
+									<li>props</li>
+									<li>React Router (simple routing)</li>
+									<li>in progress...</li>
+									<li class="danger">Redux</li>
+									<li class="danger">react-redux</li>
+								</ul>
+							</div>
+						</li>
+						<li class="accordion-list-item">
+							<h2>
+								<img src="assets/img/skills/skill-other.svg" alt="other">
+								Other
+							</h2>
+							<span class="chevron">
+								<img class="chevron-img" src="assets/img/skills/chevron.svg" alt="chevron">
+							</span>
+							<div class="accordion-list-content">
+								<ul class="skill-list">
+									<li>Webpack (simple front-end setup, loaders, plugins)</li>
+								</ul>
+							</div>
+						</li>
+
+					</ul>
 				</div>
 			</div>
 		</section>
