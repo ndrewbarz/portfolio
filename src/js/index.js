@@ -1,5 +1,4 @@
-import { HeaderComponent } from '../components/Header';
-import { MainContainerComponent } from '../components/MainContainer';
+import { hidePreview, showPreview } from '../components/preview';
 import { data } from '../components/data';
 import { toggleAccordion } from '../components/skills';
 import { projectsList } from '../components/projects';
@@ -7,6 +6,7 @@ import { TextScramble } from '../components/TextPhrases';
 import { Jokes } from '../components/ChuckJokes';
 import { UI } from '../components/ChuckUi';
 import '../components/DarkTheme';
+import '../components/backToPreview';
 import Swal from 'sweetalert2';
 
 import { validateName, validateEmail } from '../components/isValid';
@@ -15,10 +15,8 @@ import { validateName, validateEmail } from '../components/isValid';
 import '../scss/style.scss';
 
 // Preview
-const header = new HeaderComponent('header');
-
-// Main Container
-const main = new MainContainerComponent('main');
+hidePreview();
+showPreview();
 
 // Skills
 toggleAccordion();
