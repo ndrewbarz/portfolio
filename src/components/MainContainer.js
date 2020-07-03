@@ -1,19 +1,10 @@
-import { Component } from '../core/component';
+const mainContainer = document.getElementById('main');
 
-export class MainContainerComponent extends Component {
-	constructor(id) {
-		super(id);
-	}
+export const showMainContainer = () => {
+  loader.classList.add('hide');
+  mainContainer.classList.remove('hide');
+};
 
-	init() {
-		if (localStorage.getItem('visited')) {
-			this.showMainContainer();
-		}
-		const btn = document.querySelector('.btn');
-		btn.addEventListener('click', btnClick.bind(this));
-	}
-}
-
-function btnClick() {
-	this.showMainContainer();
-}
+export const hideMainContainer = () => {
+  mainContainer.classList.add('hide');
+};
