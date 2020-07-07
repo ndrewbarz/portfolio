@@ -343,6 +343,23 @@ h1 {
 	}
 }
 
+// Up Button
+.up-btn {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	display: none;
+	z-index: 9999;
+
+	svg {
+		transition: all .3s ease-in-out;
+	}
+
+	svg:hover {
+		fill: $highlight-color;
+	}
+}
+
 // About
 .about {
 	display: flex;
