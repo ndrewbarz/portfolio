@@ -89,10 +89,17 @@ window.addEventListener('scroll', (e) => {
     : nav.classList.remove('scroll');
 });
 
-// smooth scroll
+// Up Button
+const upBtn = document.querySelector('.up-btn');
+window.addEventListener('scroll', () => {
+  document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300
+    ? (upBtn.style.display = 'block')
+    : (upBtn.style.display = 'none');
+});
 
+// smooth scroll
 const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
+  speed: 500,
 });
 
 // Toggle nav
