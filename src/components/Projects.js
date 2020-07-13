@@ -5,7 +5,6 @@ const projectBox = document.querySelector('.project-box');
 // Display projects
 export const projectsList = (arr) => {
   return arr.forEach((el) => {
-    // const tags = el.tags.map((el) => el);
     const tags = el.tags.join(', ');
     template = `
     <div class="project">
