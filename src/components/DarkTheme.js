@@ -1,9 +1,10 @@
-// // dark theme
-const themeSwitch = document.getElementById('switch');
-if (themeSwitch) {
-  initTheme(); // on page load, if user has already selected a specific theme -> apply it
+// dark theme
 
-  themeSwitch.addEventListener('change', function (e) {
+const checkbox = document.querySelector('input[name=mode]');
+if (checkbox) {
+  initTheme();
+
+  checkbox.addEventListener('change', function (e) {
     resetTheme(); // update color theme
   });
 
@@ -12,21 +13,20 @@ if (themeSwitch) {
       localStorage.getItem('themeSwitch') !== null &&
       localStorage.getItem('themeSwitch') === 'dark';
     // update checkbox
-    themeSwitch.checked = darkThemeSelected;
+    checkbox.checked = darkThemeSelected;
     // update body data-theme attribute
     darkThemeSelected
-      ? document.body.classList.add('dark')
-      : document.body.classList.remove('dark');
+      ? document.body.setAttribute('data-theme', 'dark')
+      : document.body.setAttribute('data-theme', 'light');
   }
 
   function resetTheme() {
-    if (themeSwitch.checked) {
-      // dark theme has been selected
-      document.body.classList.add('dark');
-      localStorage.setItem('themeSwitch', 'dark'); // save theme selection
+    if (checkbox.checked) {
+      document.body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('themeSwitch', 'dark');
     } else {
-      document.body.classList.remove('dark');
-      localStorage.removeItem('themeSwitch'); // reset theme selection
+      document.body.setAttribute('data-theme', 'light');
+      localStorage.removeItem('themeSwitch');
     }
   }
 }

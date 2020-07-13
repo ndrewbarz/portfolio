@@ -5,7 +5,7 @@ import { projectsList } from '../components/projects';
 import { TextScramble } from '../components/TextPhrases';
 import { Jokes } from '../components/ChuckJokes';
 import { UI } from '../components/ChuckUi';
-import '../components/DarkTheme';
+import '../components/darkTheme';
 import '../components/backToPreview';
 import Swal from 'sweetalert2';
 
