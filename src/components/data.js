@@ -32,4 +32,11 @@ export const data = [
     demoLink: 'https://github.com/ndrewbarz/customHTTPLibrary',
     tags: ['js', 'fetch', 'async/await'],
   },
+  {
+    name: 'Personal web library',
+    desc: 'Personal web library build with GatsbyJS, ReactJS, GraphQL',
+    codeLink: 'https://github.com/ndrewbarz/copycode',
+    demoLink: 'https://copycodes.netlify.app/',
+    tags: ['gatsby', 'react', 'graphql'],
+  },
 ];
